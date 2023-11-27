@@ -41,8 +41,8 @@ void Screen::update(int x) {
     }
     std::cout << "Your hand: ";
     int n = players[x].getHandSize();
-    Card* hand = players[x].getHand();
+    std::vector<Card*>& hand = players[x].getHand();
     for(int i = 0; i < n; i++) {
-        std::cout << (hand + i)->name() << (i < n - 1 ? ", " : "\n");
+        std::cout << hand[i]->name() << (i < n - 1 ? ", " : "\n");
     }
 }

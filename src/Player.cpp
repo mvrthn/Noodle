@@ -13,8 +13,8 @@ int Player::getHandSize() {
     return hand.size();
 }
 
-Card* Player::getHand() {
-    return *hand.data();
+std::vector<Card*>& Player::getHand() {
+    return hand;
 }
 
 int Player::getScore() {

@@ -13,7 +13,7 @@ public:
     Bowl& getBowl(int);
     Bowl* getBowls();
     int getHandSize();
-    Card* getHand();
+    std::vector<Card*>& getHand();
     int getScore();
 
     void addToHand(Card*);
