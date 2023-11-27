@@ -1,6 +1,4 @@
-#ifndef NOODLE_EGG_H
-#define NOODLE_EGG_H
-
+#pragma once
 
 #include "../Ingredient.hpp"
 
@@ -11,6 +9,3 @@ public:
     inline int id() {return 5;}
 	inline const char* name() {return "Egg";}
 };
-
-
-#endif //NOODLE_EGG_H

@@ -1,5 +1,4 @@
-#ifndef NOODLE_CHICKEN_H
-#define NOODEL_CHICKEN_H
+#pragma once
 
 #include "../Flavor.hpp"
 
@@ -8,6 +7,3 @@ public:
     int evaluate(Card*, int);
     inline const char* name() {return "Chicken";}
 };
-
-
-#endif //NOODLE_CHICKEN_H

@@ -1,6 +1,4 @@
-#ifndef NOODLE_MUSHROOMS_H
-#define NOODLE_MUSHROOMS_H
-
+#pragma once
 
 #include "../Ingredient.hpp"
 
@@ -11,6 +9,3 @@ public:
     inline int id() {return 2;}
 	inline const char* name() {return "Mushrooms";}
 };
-
-
-#endif //NOODLE_MUSHROOMS_H

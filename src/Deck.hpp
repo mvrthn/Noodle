@@ -1,6 +1,4 @@
-#ifndef NOODLE_DECK_H
-#define NOODLE_DECK_H
-
+#pragma once
 
 #include "Card.hpp"
 
@@ -19,6 +17,3 @@ private:
     int* poolOfCards;
     Card* table[4];
 };
-
-
-#endif //NOODLE_DECK_H

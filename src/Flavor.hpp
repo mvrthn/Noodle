@@ -1,6 +1,4 @@
-#ifndef NOODLE_FLAVOR_H
-#define NOODLE_FLAVOR_H
-
+#pragma once
 
 #include "Card.hpp"
 
@@ -11,6 +9,3 @@ public:
     inline bool isFlavor() {return true;}
     inline bool isIngredient() {return false;}
 };
-
-
-#endif //NOODLE_FLAVOR_H

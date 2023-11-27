@@ -1,6 +1,4 @@
-#ifndef NOODLE_CHIVES_H
-#define NOODLE_CHIVES_H
-
+#pragma once
 
 #include "../Ingredient.hpp"
 
@@ -11,6 +9,3 @@ public:
     inline int id() {return 0;}
 	inline const char* name() {return "Chives";}
 };
-
-
-#endif //NOODLE_CHIVES_H

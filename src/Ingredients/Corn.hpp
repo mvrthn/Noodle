@@ -1,6 +1,4 @@
-#ifndef NOODLE_CORN_H
-#define NOODLE_CORN_H
-
+#pragma once
 
 #include "../Ingredient.hpp"
 
@@ -11,6 +9,3 @@ public:
     inline int id() {return 1;}
 	inline const char* name() {return "Corn";}
 };
-
-
-#endif //NOODLE_CORN_H

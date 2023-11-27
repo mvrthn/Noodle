@@ -1,6 +1,4 @@
-#ifndef NOODLE_BACON_H
-#define NOODLE_BACON_H
-
+#pragma once
 
 #include "../Ingredient.hpp"
 
@@ -11,6 +9,3 @@ public:
     inline int id() {return 4;}
 	inline const char* name() {return "Bacon";}
 };
-
-
-#endif //NOODLE_BACON_H

@@ -1,5 +1,4 @@
-#ifndef NOODLE_SOYSOUCE_H
-#define NOODEL_SOYSOUCE_H
+#pragma once
 
 #include "../Flavor.hpp"
 
@@ -8,6 +7,3 @@ public:
     int evaluate(Card*, int);
     inline const char* name() {return "SoySouce";}
 };
-
-
-#endif //NOODLE_SOYSOUCE_H

@@ -1,6 +1,4 @@
-#ifndef NOODLE_SCREEN_H
-#define NOODLE_SCREEN_H
-
+#pragma once
 
 #include "Player.hpp"
 
@@ -17,6 +15,3 @@ private:
     Bowl** bowls;
     Card** table;
 };
-
-
-#endif //NOODLE_SCREEN_H

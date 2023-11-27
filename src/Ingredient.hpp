@@ -1,6 +1,4 @@
-#ifndef NOODLE_INGREDIENT_H
-#define NOODLE_INGREDIENT_H
-
+#pragma once
 
 #include "Card.hpp"
 
@@ -13,6 +11,3 @@ public:
     virtual int id() = 0;
     virtual const char* name() = 0;
 };
-
-
-#endif //NOODLE_INGREDIENT_H

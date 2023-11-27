@@ -1,6 +1,4 @@
-#ifndef NOODLE_NARUTO_H
-#define NOODLE_NARUTO_H
-
+#pragma once
 
 #include "../Ingredient.hpp"
 
@@ -11,6 +9,3 @@ public:
     inline int id() {return 5;}
 	inline const char* name() {return "Naruto";}
 };
-
-
-#endif //NOODLE_NARUTO_H

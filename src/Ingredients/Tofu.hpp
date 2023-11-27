@@ -1,6 +1,4 @@
-#ifndef NOODLE_TOFU_H
-#define NOODLE_TOFU_H
-
+#pragma once
 
 #include "../Ingredient.hpp"
 
@@ -11,6 +9,3 @@ public:
     inline int id() {return 3;}
 	inline const char* name() {return "Tofu";}
 };
-
-
-#endif //NOODLE_TOFU_H

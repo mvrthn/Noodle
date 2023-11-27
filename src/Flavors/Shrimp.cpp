@@ -1,4 +1,4 @@
-#include "Schrimp.hpp"
+#include "Shrimp.hpp"
 #include "../Ingredient.hpp"
 
 int Schrimp::evaluate(Card* cards, int n) {

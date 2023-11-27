@@ -1,6 +1,4 @@
-#ifndef NOODLE_BOWL_H
-#define NOODLE_BOWL_H
-
+#pragma once
 
 #include "Flavor.hpp"
 
@@ -23,6 +21,3 @@ private:
     short topIndex;
     int score;
 };
-
-
-#endif //NOODLE_BOWL_H

@@ -1,5 +1,4 @@
-#ifndef NOODLE_BEAF_H
-#define NOODEL_BEAF_H
+#pragma once
 
 #include "../Flavor.hpp"
 
@@ -8,6 +7,3 @@ public:
     int evaluate(Card*, int);
     inline const char* name() {return "Beaf";}
 };
-
-
-#endif //NOODLE_BEAF_H

@@ -1,6 +1,4 @@
-#ifndef NOODLE_PLAYER_H
-#define NOODLE_PLAYER_H
-
+#pragma once
 
 #include <vector>
 #include "Bowl.hpp"
@@ -32,6 +30,3 @@ private:
     int spoons;
     int score;
 };
-
-
-#endif //NOODLE_PLAYER_H

@@ -1,6 +1,4 @@
-#ifndef NOODLE_GAME_H
-#define NOODLE_GAME_H
-
+#pragma once
 
 #include "Player.hpp"
 #include "Screen.hpp"
@@ -20,6 +18,3 @@ private:
     char* errMsg;
     Screen* screen;
 };
-
-
-#endif //NOODLE_GAME_H

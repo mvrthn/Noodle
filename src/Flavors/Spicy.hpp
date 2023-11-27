@@ -1,5 +1,4 @@
-#ifndef NOODLE_SPICY_H
-#define NOODEL_SPICY_H
+#pragma once
 
 #include "../Flavor.hpp"
 
@@ -8,6 +7,3 @@ public:
     int evaluate(Card*, int);
     inline const char* name() {return "Spicy";}
 };
-
-
-#endif //NOODLE_SPICY_H

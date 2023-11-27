@@ -11,7 +11,7 @@
 #include "Ingredients/Tofu.hpp"
 #include "Flavors/Beaf.hpp"
 #include "Flavors/Chicken.hpp"
-#include "Flavors/Schrimp.hpp"
+#include "Flavors/Shrimp.hpp"
 #include "Flavors/SoySouce.hpp"
 #include "Flavors/Spicy.hpp"
 #include "Specials/Nori.hpp"

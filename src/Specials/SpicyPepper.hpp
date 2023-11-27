@@ -1,6 +1,4 @@
-#ifndef NOODLE_SPICYPEPPER_H
-#define NOODLE_SPICYPEPPER_H
-
+#pragma once
 
 #include "../Special.hpp"
 
@@ -9,6 +7,3 @@ public:
     inline const char* name() {return "Spicy pepper";}
 
 };
-
-
-#endif //NOODLE_SPICYPEPPER_H

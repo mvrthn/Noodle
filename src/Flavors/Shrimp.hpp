@@ -1,5 +1,4 @@
-#ifndef NOODLE_SCHRIM_H
-#define NOODEL_SCHRIM_H
+#pragma once 
 
 #include "../Flavor.hpp"
 
@@ -8,6 +7,3 @@ public:
     int evaluate(Card*, int);
     inline const char* name() {return "Schrimp";}
 };
-
-
-#endif //NOODLE_SCHRIM_H

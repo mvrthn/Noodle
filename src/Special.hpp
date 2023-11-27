@@ -1,6 +1,4 @@
-#ifndef NOODLE_SPECIAL_H
-#define NOODLE_SPECIAL_H
-
+#pragma once
 
 #include "Card.hpp"
 
@@ -9,7 +7,4 @@ public:
     inline bool isFlavor() {return false;}
     inline bool isIngredient() {return false;}
     virtual const char* name() = 0;
-}; 
-
-
-#endif //NOODLE_SPECIAL_H
+};
