@@ -10,6 +10,7 @@ public:
 
     inline Card* getCards() {return *cards;}
     inline int getTopIndex() {return topIndex;}
+    inline int getScore() {return score;}
 
     bool addCard(Card*, char*);
     Card* removeCard(char*);

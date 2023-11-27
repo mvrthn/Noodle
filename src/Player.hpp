@@ -14,6 +14,7 @@ public:
     Bowl* getBowls();
     int getHandSize();
     Card* getHand();
+    int getScore();
 
     void addToHand(Card*);
     void removeFromHand(int);

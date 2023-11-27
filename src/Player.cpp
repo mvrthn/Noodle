@@ -17,6 +17,10 @@ Card* Player::getHand() {
     return *hand.data();
 }
 
+int Player::getScore() {
+    return score;
+}
+
 void Player::addToHand(Card* card) {
     hand.push_back(card);
 }
@@ -56,7 +60,9 @@ bool Player::replaceTable(Deck* deck, char* errMsg) {
 }
 
 bool Player::eatBowl(int index, char* errMsg) {
-    return bowls[index].eat(errMsg);
+    bool b = bowls[index].eat(errMsg);
+    score += bowls[index].getScore();
+    return b;
 }
 
 bool Player::pourOutBowl(int index, char* errMsg) {
