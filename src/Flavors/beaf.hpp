@@ -10,7 +10,7 @@ class Beaf : Flavor {
 public:
     Beaf(): Flavor("Beaf") {}
 
-    int evaluate(Card*, int) const;
+    int evaluate(const Array<5>&) const;
 };
     
 } // namespace Noodle

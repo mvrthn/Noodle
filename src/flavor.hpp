@@ -2,6 +2,7 @@
 
 
 #include "card.hpp"
+#include "array.hpp"
 
 
 namespace Noodle {
@@ -13,7 +14,7 @@ public:
     inline bool isFlavor() const { return true; }
     inline bool isIngredient() const { return false; }
 
-    virtual int evaluate(Card**, int) const = 0;
+    virtual int evaluate(const Array<5>&) const = 0;
 };
     
 } // namespace Noodle

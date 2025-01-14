@@ -5,10 +5,11 @@
 
 namespace Noodle {
 
-int Shrimp::evaluate(Card* cards, int n) const {
+int Shrimp::evaluate(const Array<5>& cards) const {
     int v = 0, p = 0, m = 0;
+    int n = cards.len();
     for(int i = 0; i <= n; i++) {
-        Card* card = cards + i;
+        const Card* card = cards[i];
         if(card->isFlavor()) continue;
         Ingredient* ingredient = (Ingredient*) card;
         bool b = false;

@@ -2,6 +2,8 @@
 
 
 #include "card.hpp"
+#include "array.hpp"
+
 
 namespace Noodle {
 
@@ -11,7 +13,7 @@ public:
     Card* remove(int);
 
 private:
-    Card* cards[4];
+    Array<4> cards;
 };
     
 } // namespace Noodle

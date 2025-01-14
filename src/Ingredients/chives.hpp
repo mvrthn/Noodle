@@ -10,9 +10,9 @@ class Chives : Ingredient {
 public:
     Chives(): Ingredient("Chives") {}
 
-    inline int id() { return 0; }
-    inline bool isVege() { return true; }
-    inline bool isProtein() { return false; }
+    inline int id() const { return 0; }
+    inline bool isVege() const { return true; }
+    inline bool isProtein() const { return false; }
 };
 
 } // namespace Noodle

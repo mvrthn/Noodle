@@ -10,7 +10,7 @@ class SoySouce : Flavor {
 public:
     SoySouce(): Flavor("SoySouce") {}
 
-    int evaluate(Card*, int) const;
+    int evaluate(const Array<5>&) const;
 };
     
 } // namespace Noodle

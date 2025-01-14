@@ -7,23 +7,17 @@
 namespace Noodle {
 
 void Hand::add(Card* card) {
-    assert(size < maxSize);
-    cards[size++] = card;
+    cards.push(card);
 }
 
 Card* Hand::remove(int index) {
-    assert(index >= 0 && index < size);
-    assert(size > 0);
-    Card* card = cards[index];
-    for(int i = index; i < size - 1; i++) {
-        cards[i] = cards[i + 1];
-    }
-    cards[--size] = nullptr;
+    Card* card = cards.remove(index);
+    cards.update();
     return card;
 }
 
 bool Hand::isValid() {
-    return size <= 5;
+    return cards.len() <= 5;
 }
     
 } // namespace Noodle

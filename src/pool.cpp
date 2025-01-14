@@ -6,20 +6,11 @@
 namespace Noodle {
 
 void Pool::add(Card* card) {
-    for(auto& c : cards) {
-        if(c == nullptr) {
-            c = card;
-            return;
-        }
-    }
+    cards.push(card);
 }
 
 Card* Pool::remove(int index) {
-    assert(index >= 0 && index < 4);
-
-    Card* card = cards[index];
-    cards[index] = nullptr;
-    return card;
+    return cards.remove(index);
 }
     
 } // namespace Noodle

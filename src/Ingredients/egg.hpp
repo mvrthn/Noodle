@@ -10,9 +10,9 @@ class Egg : Ingredient {
 public:
     Egg(): Ingredient("Egg") {}
 
-    inline int id() { return 5; }
-    inline bool isVege() { return true; }
-    inline bool isProtein() { return false; }
+    inline int id() const { return 5; }
+    inline bool isVege() const { return true; }
+    inline bool isProtein() const { return false; }
 };
 
 } // namespace Noodle

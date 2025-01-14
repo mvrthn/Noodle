@@ -2,6 +2,7 @@
 
 
 #include "card.hpp"
+#include "array.hpp"
 
 
 constexpr int maxSize = 7;
@@ -16,8 +17,7 @@ public:
     bool isValid();
 
 private:
-    Card* cards[maxSize] = {nullptr};
-    int size = 0;
+    Array<maxSize> cards;
 };
     
 } // namespace Noodle

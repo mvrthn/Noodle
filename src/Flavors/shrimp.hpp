@@ -10,7 +10,7 @@ class Shrimp : Flavor {
 public:
     Shrimp(): Flavor("Shrimp") {}
 
-    int evaluate(Card*, int) const;
+    int evaluate(const Array<5>&) const;
 };
     
 } // namespace Noodle
