@@ -11,6 +11,7 @@ class Pool {
 public:
     void add(Card*);
     Card* remove(int);
+    void clear();
 
 private:
     Array<4> cards;

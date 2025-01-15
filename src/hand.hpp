@@ -15,6 +15,7 @@ public:
     void add(Card*);
     Card* remove(int);
     bool isValid();
+    void update();
 
 private:
     Array<maxSize> cards;

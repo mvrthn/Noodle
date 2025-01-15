@@ -1,6 +1,7 @@
 #include "deck.hpp"
 
 #include <algorithm>
+#include <random>
 
 #include "Ingredients/bacon.hpp"
 #include "Ingredients/chives.hpp"
@@ -60,7 +61,8 @@ Deck::Deck() {
                 break;
         }
     }
-    std::random_shuffle(cards, cards + numOfCards);
+    auto rng = std::default_random_engine {};
+    std::shuffle(cards, cards + numOfCards, rng);
 }
 
 Deck::~Deck() {

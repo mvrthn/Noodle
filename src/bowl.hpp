@@ -2,7 +2,8 @@
 
 
 #include "card.hpp"
-#include "Flavor.hpp"
+#include "flavor.hpp"
+#include "array.hpp"
 
 
 namespace Noodle {
@@ -12,12 +13,12 @@ public:
     bool add(Card*);
     Card* remove();
     int eat();
-    void pourOut();
+    bool pourOut();
 
 private:
-    Card* cards[5] = {nullptr};
+    Array<5> cards;
     Flavor* flavor = nullptr;
-    int size = 0;
+    bool isEaten = false;
 };
     
 } // namespace Noodle

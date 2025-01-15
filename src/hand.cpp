@@ -12,12 +12,15 @@ void Hand::add(Card* card) {
 
 Card* Hand::remove(int index) {
     Card* card = cards.remove(index);
-    cards.update();
     return card;
 }
 
 bool Hand::isValid() {
     return cards.len() <= 5;
+}
+
+void Hand::update() {
+    cards.update();
 }
     
 } // namespace Noodle

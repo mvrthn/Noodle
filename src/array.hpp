@@ -9,8 +9,6 @@ namespace Noodle {
 template<int Size>
 class Array {
 public:
-    Array(int n): Size(n) {};
-
     void insert(Card*, int);
     void push(Card*);
 

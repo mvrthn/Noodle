@@ -4,7 +4,10 @@
 namespace Noodle {
     
 bool Bowl::add(Card* card) {
-    if(size >= 5) {
+    if(isEaten) {
+        return false;
+    }
+    if(cards.len() >= 5) {
         return false;
     }
     if(card->isFlavor()) {
@@ -13,38 +16,42 @@ bool Bowl::add(Card* card) {
         }
         flavor = (Flavor*) card;
     }
-    cards[size++] = card;
+    cards.push(card);
     return true;
 }
 
 Card* Bowl::remove() {
-    if(size <= 0) {
+    if(isEaten) {
         return nullptr;
     }
-    Card* card = cards[--size];
+    if(cards.empty()) {
+        return nullptr;
+    }
+    Card* card = cards.pop();
     if(card == flavor) {
         flavor = nullptr;
     }
-    cards[size] = nullptr;
     return card;
 }
 
 int Bowl::eat() {
-    if(size <= 2) {
+    if(isEaten) {
         return -1;
     }
-    if(!flavor) {
+    if(cards.len() <= 2 || !flavor) {
         return -1;
     }
-    return flavor->evaluate(cards, size);
+    isEaten = true;
+    return flavor->evaluate(cards);
 }
 
-void Bowl::pourOut() {
-    for(int i = 0; i < size; i++) {
-        cards[i] = nullptr;
+bool Bowl::pourOut() {
+    if(isEaten) {
+        return false;
     }
+    cards.clear();
     flavor = nullptr;
-    size = 0;
+    return true;
 }
 
 } // namespace Noodle
