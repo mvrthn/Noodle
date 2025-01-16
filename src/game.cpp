@@ -4,74 +4,102 @@
 namespace Noodle {
 
 template<int N> 
-bool Game<N>::drawCardFromDeck() {
+ReturnType Game<N>::drawCardFromDeck() {
     Card* card = deck.drawCard();
     if(!card) {
-        return false;
+        return endMove(true);
     }
-    playerOnMove.addToHand(card);
-    return true;
+    turn.playerOnMove.addToHand(card);
+    return endMove();
 }
 
 template<int N> 
-bool Game<N>::drawCardFromPool(int index) {
+ReturnType Game<N>::drawCardFromPool(int index) {
     Card* card = pool.remove(index);
     if(!card) {
-        return false;
+        return endMove(true);
     }
-    playerOnMove.addToHand(card);
+    turn.playerOnMove.addToHand(card);
     Card* newCard = deck.drawCard();
     if(newCard) {
         pool.add(newCard);
     }
-    return true;
+    return endMove();
 }
 
 template<int N> 
-bool Game<N>::redrawPool() {
+ReturnType Game<N>::redrawPool() {
     pool.clear();
     for(int i = 0; i < 4; i++) {
         Card* card = deck.drawCard();
         if(!card) {
-            return false;
+            return endMove(true);
         }
         pool.add(card);
     }
-    return true;
+    return endMove();
 }
 
 template<int N> 
-bool Game<N>::addCardToBowl(int cardIndex, int bowlIndex) {
-    Card* card = playerOnMove.removeFromHand(cardIndex);
+ReturnType Game<N>::addCardToBowl(int cardIndex, int bowlIndex) {
+    Card* card = turn.playerOnMove.removeFromHand(cardIndex);
     if(!card) {
-        return false;
+        return endMove(true);
     }
-    if(playerOnMove.addToBowl(bowlIndex, card)) {
-        playerOnMove.updateHand();
-        return true;
+    if(turn.playerOnMove.addToBowl(bowlIndex, card)) {
+        turn.playerOnMove.updateHand();
+        return endMove();
     }
-    playerOnMove.addToHand(card);
-    return false;
+    turn.playerOnMove.addToHand(card);
+    return endMove(true);
 }
 
 template<int N> 
-bool Game<N>::pourOutBowl(int index) {
-    return playerOnMove.pourOutBowl(index);
+ReturnType Game<N>::pourOutBowl(int index) {
+    return endMove(!turn.playerOnMove.pourOutBowl(index));
 }
 
 template<int N> 
-bool Game<N>::eatBowl(int index) {
-    int points = playerOnMove.eatBowl(index);
+ReturnType Game<N>::eatBowl(int index) {
+    int points = turn.playerOnMove.eatBowl(index);
     if(points == -1) {
-        return false;
+        return endMove(true);
     }
-    playerOnMove.checkIfWon();
-    return true;
+    return endMove(false, turn.playerOnMove.checkIfWon());
 }
 
 template<int N> 
-bool Game<N>::useSpoon() {
+ReturnType Game<N>::useSpoon() {
 
 }
+
+template<int N>
+ReturnType Game<N>::endMove(bool failed, bool gameEnd) {
+    if(failed) {
+        return FAILED;
+    }
+    if(gameEnd) {
+        return SUCCESS_GAME_END;
+    }
+    turn.move();
+    if(!turn.isFinished()) {
+        return SUCCESS_NO_EVENT;
+    }
+    ReturnType rt;
+    if(turn.playerOnMove.handIsValid()) {
+        rt = SUCCES_TURN_END;
+    }
+    else {
+        rt = SUCCESS_HAND_NOT_VALID;
+    }
+    turn.next(players);
+    return rt;
+}
+
+template<int N>
+ReturnType Game<N>::endMove(bool failed) { return endMove(failed, false); }
+
+template<int N>
+ReturnType Game<N>::endMove() { return endMove(false, false); }
     
 } // namespace Noodle

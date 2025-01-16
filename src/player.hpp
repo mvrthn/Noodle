@@ -12,6 +12,7 @@ class Player {
 public:
     void addToHand(Card*);
     Card* removeFromHand(int);
+    bool handIsValid();
     void updateHand();
 
     bool addToBowl(int, Card*);

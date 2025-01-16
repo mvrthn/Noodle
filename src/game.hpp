@@ -4,6 +4,7 @@
 #include "deck.hpp"
 #include "pool.hpp"
 #include "player.hpp"
+#include "types.hpp"
 
 
 namespace Noodle {
@@ -11,20 +12,24 @@ namespace Noodle {
 template<int N>
 class Game {
 public:
-    bool drawCardFromDeck();
-    bool drawCardFromPool(int);
-    bool redrawPool();
-    bool addCardToBowl(int, int);
-    bool pourOutBowl(int);
-    bool eatBowl(int);
-    bool useSpoon();
+    ReturnType drawCardFromDeck();
+    ReturnType drawCardFromPool(int);
+    ReturnType redrawPool();
+    ReturnType addCardToBowl(int, int);
+    ReturnType pourOutBowl(int);
+    ReturnType eatBowl(int);
+    ReturnType useSpoon();
     
 private:
     Deck deck;
     Pool pool;
     Player players[N];
-    Player& playerOnMove = players[0];
-    int playerIndex = 0;
+    Turn<N> turn = Turn<N>(players);
+
+private:
+    ReturnType endMove(bool, bool);
+    ReturnType endMove(bool);
+    ReturnType endMove();
 };
 
 } // namespace Noodle

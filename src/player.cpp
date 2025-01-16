@@ -13,6 +13,10 @@ Card* Player::removeFromHand(int index) {
     return hand.remove(index);
 }
 
+bool Player::handIsValid() {
+    return hand.isValid();
+}
+
 void Player::updateHand() {
     hand.update();
 }
