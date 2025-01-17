@@ -25,8 +25,8 @@ struct Turn {
         playerIndex = (playerIndex + 1) % N;
         playerOnMove = players[playerIndex];
     }
-    inline void move() { movesLeft--; }
-    inline bool isFinished() { return movesLeft == 0; }
+    inline void move() { if(movesLeft) movesLeft--; }
+    inline bool isFinished() { return movesLeft <= 0; }
 };
 
     

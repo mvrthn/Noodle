@@ -86,6 +86,12 @@ ReturnType Game<N>::useSpoon(int fromPlayer, int fromBowl, bool toHand, int toPl
 }
 
 template<int N>
+ReturnType Game<N>::discardCardFromHand(int index) {
+    turn.playerOnMove.removeFromHand(index);
+    return endMove();
+}
+
+template<int N>
 ReturnType Game<N>::endMove(bool failed, bool gameEnd) {
     if(failed) {
         return FAILED;
@@ -97,15 +103,11 @@ ReturnType Game<N>::endMove(bool failed, bool gameEnd) {
     if(!turn.isFinished()) {
         return SUCCESS_NO_EVENT;
     }
-    ReturnType rt;
-    if(turn.playerOnMove.handIsValid()) {
-        rt = SUCCES_TURN_END;
-    }
-    else {
-        rt = SUCCESS_HAND_NOT_VALID;
+    if(!turn.playerOnMove.handIsValid()) {
+        return SUCCESS_HAND_NOT_VALID;
     }
     turn.next(players);
-    return rt;
+    return SUCCES_TURN_END;
 }
 
 template<int N>
