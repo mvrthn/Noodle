@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <random>
+#include <iterator>
 
 #include "Ingredients/bacon.hpp"
 #include "Ingredients/chives.hpp"
@@ -17,60 +18,72 @@
 #include "Flavors/soysouce.hpp"
 
 
-constexpr int cardTypes = 11;
-constexpr int numOfCards = 66;
-
 namespace Noodle {
     
 Deck::Deck() {
-    cards = (Card*) malloc(sizeof(Card) * numOfCards);
+    memSlot = (Card*) malloc(sizeof(Card) * numOfCards);
     for(int i = 0; i < numOfCards; i++) {
         switch(i / cardTypes) {
             case 0:
-                new(cards + i) Bacon();
+                cards[i] = (Card*) new(memSlot + i) Bacon();
                 break;
             case 1:
-                new(cards + i) Chives();
+                cards[i] = (Card*) new(memSlot + i) Chives();
                 break;
             case 2:
-                new(cards + i) Corn();
+                cards[i] = (Card*) new(memSlot + i) Corn();
                 break;
             case 3:
-                new(cards + i) Egg();
+                cards[i] = (Card*) new(memSlot + i) Egg();
                 break;
             case 4:
-                new(cards + i) Mushrooms();
+                cards[i] = (Card*) new(memSlot + i) Mushrooms();
                 break;
             case 5:
-                new(cards + i) Naruto();
+                cards[i] = (Card*) new(memSlot + i) Naruto();
                 break;
             case 6:
-                new(cards + i) Tofu();
+                cards[i] = (Card*) new(memSlot + i) Tofu();
                 break;
             case 7:
-                new(cards + i) Beaf();
+                cards[i] = (Card*) new(memSlot + i) Beaf();
                 break;
             case 8:
-                new(cards + i) Chicken();
+                cards[i] = (Card*) new(memSlot + i) Chicken();
                 break;
             case 9:
-                new(cards + i) Shrimp();
+                cards[i] = (Card*) new(memSlot + i) Shrimp();
                 break;
             case 10:
-                new(cards + i) SoySouce();
+                cards[i] = (Card*) new(memSlot + i) SoySouce();
                 break;
         }
     }
-    auto rng = std::default_random_engine {};
-    std::shuffle(cards, cards + numOfCards, rng);
+    shuffle();
 }
 
 Deck::~Deck() {
-    free(cards);
+    free(memSlot);
 }
 
 Card* Deck::drawCard() {
-    return nullptr;
+    if(index >= numOfCards) {
+        return nullptr;
+    }
+    return cards[index++];
+}
+
+void swap(Card** a, Card** b) {
+    int size = sizeof(Card);
+    Card* temp = *a;
+    *a = *b;
+    *b = temp;   
+}
+
+void Deck::shuffle() {
+    std::random_device rd;
+    std::mt19937 g(rd());
+    std::shuffle(cards, cards  + numOfCards - 1, g);
 }
 
 } // namespace Noodl 

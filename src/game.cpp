@@ -69,8 +69,20 @@ ReturnType Game<N>::eatBowl(int index) {
 }
 
 template<int N> 
-ReturnType Game<N>::useSpoon() {
-
+ReturnType Game<N>::useSpoon(int fromPlayer, int fromBowl, bool toHand, int toPlayer, int toBowl) {
+    Card* card = players[fromPlayer].removeFromBowl(fromBowl);
+    if(!card) {
+        return endMove(true);
+    }
+    if(toHand) {
+        turn.playerOnMove.addToHand(card);
+        return endMove(false);
+    }
+    if(players[toPlayer].addToBowl(toBowl, card)) {
+        return endMove(false);
+    }
+    players[fromPlayer].addToBowl(fromBowl, card);
+    return endMove(true);
 }
 
 template<int N>

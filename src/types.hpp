@@ -19,8 +19,8 @@ struct Turn {
     int movesLeft = 2;
     int playerIndex = 0;
     Player& playerOnMove;
-    Turn(Player& players[N]): playerOnMove(players[0]) {}
-    inline void next(Player& players[N]) {
+    Turn(Player (&players)[N]): playerOnMove(players[0]) {}
+    inline void next(Player (&players)[N]) {
         movesLeft = 2;
         playerIndex = (playerIndex + 1) % N;
         playerOnMove = players[playerIndex];

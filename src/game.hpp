@@ -18,7 +18,8 @@ public:
     ReturnType addCardToBowl(int, int);
     ReturnType pourOutBowl(int);
     ReturnType eatBowl(int);
-    ReturnType useSpoon();
+    ReturnType useSpoon(int, int, bool, int, int);
+    ReturnType discardCardFromHand(int);
     
 private:
     Deck deck;

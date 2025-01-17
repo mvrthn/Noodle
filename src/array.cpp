@@ -9,7 +9,7 @@ template<int Size>
 void Array<Size>::insert(Card* card, int i) {
     assert(i >= 0 && i < Size);
     if(cards[i]) {
-        assert(false && "insert(): slot occupied")
+        assert(false && "insert(): slot occupied");
     } 
     length++;
     cards[i] = card;

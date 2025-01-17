@@ -4,6 +4,10 @@
 #include "card.hpp"
 
 
+constexpr int cardTypes = 11;
+constexpr int numOfCards = 66;
+
+
 namespace Noodle {
 
 class Deck {
@@ -14,8 +18,12 @@ public:
     Card* drawCard();
 
 private:
-    Card* cards;
+    Card* cards[numOfCards];
+    Card* memSlot;
     int index = 0;
+
+private:
+    void shuffle();
 };
     
 } // namespace Noodle

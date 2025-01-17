@@ -8,7 +8,7 @@ namespace Noodle {
 
 class Card {
 public:
-    Card(std::string& _name): name(_name) {}
+    Card(const std::string& _name): name(_name) {}
 
     inline const std::string& getName() const { return name; }
 
