@@ -115,5 +115,9 @@ ReturnType Game<N>::endMove(bool failed) { return endMove(failed, false); }
 
 template<int N>
 ReturnType Game<N>::endMove() { return endMove(false, false); }
+
+template class Game<3>;
+template class Game<4>;
+template class Game<5>;
     
 } // namespace Noodle

@@ -25,7 +25,7 @@ void Array<Size>::push(Card* card) {
         length++;
         return;
     } 
-    asser(false && "push(): no free slot in array");
+    assert(false && "push(): no free slot in array");
 }
 
 template <int Size>
@@ -101,5 +101,9 @@ const Card* Array<Size>::operator[](int i) const {
     assert(cards[i]);
     return cards[i];
 }
+
+template class Array<4>;
+template class Array<5>;
+template class Array<7>;
 
 } // namespace Noodle
