@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.25)
 project(Noodle LANGUAGES CXX)
 
 file(GLOB SRC_PATH "src/*.cpp" "src/Flavors/*.cpp")
