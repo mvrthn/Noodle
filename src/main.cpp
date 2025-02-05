@@ -1,6 +1,7 @@
-#include "game.hpp"
+#include "app.hpp"
 
 int main() {
-    Noodle::Game<3> game;
+    Noodle::App<5> app;
+    app.run();
     return 0;
 }

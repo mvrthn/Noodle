@@ -1,7 +1,13 @@
 #pragma once
 
 
+#include "SFML/Graphics.hpp"
+
 #include "game.hpp"
+
+
+constexpr int defaultW = 1600;
+constexpr int defaultH = 900;
 
 
 namespace Noodle {
@@ -12,6 +18,7 @@ public:
     void run();
 
 private:
+    sf::Window window = sf::Window({defaultW, defaultH}, "Noodle", sf::Style::Close);
     Game<N> game;
 };
 
