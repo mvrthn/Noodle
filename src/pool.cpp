@@ -16,5 +16,9 @@ Card* Pool::remove(int index) {
 void Pool::clear() {
     cards.clear();
 }
+
+const Array<Pool::Size>& Pool::getData() const {
+    return cards;
+}
     
 } // namespace Noodle

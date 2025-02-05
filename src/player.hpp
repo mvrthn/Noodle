@@ -12,7 +12,7 @@ class Player {
 public:
     void addToHand(Card*);
     Card* removeFromHand(int);
-    bool handIsValid();
+    bool handIsValid() const;
     void updateHand();
 
     bool addToBowl(int, Card*);
@@ -22,7 +22,10 @@ public:
     bool pourOutBowl(int);
 
     bool useSpoon();
-    bool checkIfWon();
+    bool checkIfWon() const;
+
+    const Array<Bowl::Size>& getDataFromBowl(int) const;
+    const Array<Hand::MaxSize>& getDataFromHand() const;
 
 private:
     Hand hand;
@@ -32,7 +35,7 @@ private:
     int eatenBowls = 0;
 
 private:
-    void checkIfInBounds(int);
+    void checkIfInBounds(int) const;
 };
 
 } // namespace Noodle

@@ -13,8 +13,12 @@ public:
     Card* remove(int);
     void clear();
 
+public:
+    static constexpr int Size = 4;
+    const Array<Size>& getData() const;
+
 private:
-    Array<4> cards;
+    Array<Size> cards;
 };
     
 } // namespace Noodle

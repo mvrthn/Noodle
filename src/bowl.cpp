@@ -54,4 +54,8 @@ bool Bowl::pourOut() {
     return true;
 }
 
+const Array<Bowl::Size>& Bowl::getData() const {
+    return cards;
+}
+
 } // namespace Noodle

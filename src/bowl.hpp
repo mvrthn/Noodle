@@ -15,8 +15,12 @@ public:
     int eat();
     bool pourOut();
 
+public:
+    static constexpr int Size = 5;
+    const Array<Size>& getData() const;
+
 private:
-    Array<5> cards;
+    Array<Size> cards;
     Flavor* flavor = nullptr;
     bool isEaten = false;
 };

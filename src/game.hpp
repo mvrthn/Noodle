@@ -20,6 +20,10 @@ public:
     ReturnType eatBowl(int);
     ReturnType useSpoon(int, int, bool, int, int);
     ReturnType discardCardFromHand(int);
+
+    const Array<Pool::Size>& getDataFromPool() const;
+    const Array<Hand::MaxSize>& getDataFromHand(int) const;
+    const Array<Bowl::Size>& getDataFromBowl(int, int) const;
     
 private:
     Deck deck;

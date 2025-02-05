@@ -5,20 +5,21 @@
 #include "array.hpp"
 
 
-constexpr int maxSize = 7;
-
-
 namespace Noodle {
 
 class Hand {
 public:
     void add(Card*);
     Card* remove(int);
-    bool isValid();
+    bool isValid() const;
     void update();
 
+public:
+    static constexpr int MaxSize = 7;
+    const Array<MaxSize>& getData() const;
+
 private:
-    Array<maxSize> cards;
+    Array<MaxSize> cards;
 };
     
 } // namespace Noodle

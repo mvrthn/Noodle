@@ -13,7 +13,7 @@ Card* Player::removeFromHand(int index) {
     return hand.remove(index);
 }
 
-bool Player::handIsValid() {
+bool Player::handIsValid() const {
     return hand.isValid();
 }
 
@@ -52,11 +52,20 @@ bool Player::useSpoon() {
     return true;
 }
 
-bool Player::checkIfWon() {
+bool Player::checkIfWon() const {
     return eatenBowls >= 3;
 }
 
-void Player::checkIfInBounds(int i) {
+const Array<Bowl::Size>& Player::getDataFromBowl(int index) const {
+    checkIfInBounds(index);
+    return bowls[index].getData();
+}
+
+const Array<Hand::MaxSize>& Player::getDataFromHand() const {
+    return hand.getData();
+}
+
+void Player::checkIfInBounds(int i) const {
     assert(i >= 0 && i < 3);
 }
 

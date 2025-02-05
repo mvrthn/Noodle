@@ -15,12 +15,16 @@ Card* Hand::remove(int index) {
     return card;
 }
 
-bool Hand::isValid() {
+bool Hand::isValid() const {
     return cards.len() <= 5;
 }
 
 void Hand::update() {
     cards.update();
+}
+
+const Array<Hand::MaxSize>& Hand::getData() const {
+    return cards;
 }
     
 } // namespace Noodle

@@ -92,6 +92,21 @@ ReturnType Game<N>::discardCardFromHand(int index) {
 }
 
 template<int N>
+const Array<Pool::Size>& Game<N>::getDataFromPool() const {
+    return pool.getData();
+}
+
+template<int N>
+const Array<Hand::MaxSize>& Game<N>::getDataFromHand(int playerIndex) const {
+    return players[playerIndex].getDataFromHAnd();
+}
+
+template<int N>
+const Array<Bowl::Size>& Game<N>::getDataFromBowl(int playerIndex, int bowlIndex) const {
+    return players[playerIndex].getDataFromBowl(bowlIndex);
+}
+
+template<int N>
 ReturnType Game<N>::endMove(bool failed, bool gameEnd) {
     if(failed) {
         return FAILED;
