@@ -8,7 +8,7 @@ namespace Noodle {
 
 class SoySouce : Flavor {
 public:
-    SoySouce(): Flavor("SoySouce") {}
+    SoySouce(): Flavor(19, "SoySouce") {}
 
     int evaluate(const Array<5>&) const;
 };

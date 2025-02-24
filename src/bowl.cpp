@@ -7,7 +7,7 @@ bool Bowl::add(Card* card) {
     if(isEaten) {
         return false;
     }
-    if(cards.len() >= 5) {
+    if(cards.len() >= Size) {
         return false;
     }
     if(card->isFlavor()) {

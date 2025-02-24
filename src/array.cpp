@@ -8,6 +8,9 @@ namespace Noodle {
 template<int Size>
 void Array<Size>::insert(Card* card, int i) {
     assert(i >= 0 && i < Size);
+    if(!card) {
+        return;
+    }
     if(cards[i]) {
         assert(false && "insert(): slot occupied");
     } 
@@ -17,6 +20,9 @@ void Array<Size>::insert(Card* card, int i) {
 
 template <int Size>
 void Array<Size>::push(Card* card) {
+    if(!card) {
+        return;
+    }
     for(int i = 0; i < Size; i++) {
         if(cards[i]) {
             continue;

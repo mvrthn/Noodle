@@ -28,14 +28,16 @@ public:
     const Array<Hand::MaxSize>& getDataFromHand() const;
 
 private:
-    Hand hand;
-    Bowl bowls[3];
-    int spoons = 2;
-    int score = 0;
-    int eatenBowls = 0;
+    static void checkIfInBounds(int);
+    static constexpr int BowlNum = 3;
+    static constexpr int SpoonNum = 2;
 
 private:
-    void checkIfInBounds(int) const;
+    Hand hand;
+    Bowl bowls[BowlNum];
+    int spoons = SpoonNum;
+    int score = 0;
+    int eatenBowls = 0;
 };
 
 } // namespace Noodle

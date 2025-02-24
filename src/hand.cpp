@@ -16,7 +16,7 @@ Card* Hand::remove(int index) {
 }
 
 bool Hand::isValid() const {
-    return cards.len() <= 5;
+    return cards.len() <= LegalSize;
 }
 
 void Hand::update() {

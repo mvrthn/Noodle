@@ -9,7 +9,7 @@ namespace Noodle {
 
 class Flavor : public Card {
 public:
-    Flavor(std::string name): Card(name) {}
+    Flavor(int id, std::string name): Card(id, name) {}
 
     inline bool isFlavor() const { return true; }
     inline bool isIngredient() const { return false; }

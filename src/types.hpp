@@ -6,12 +6,12 @@
 
 namespace Noodle {
 
-enum ReturnType {
+enum Status {
     FAILED,
     SUCCESS_NO_EVENT,
     SUCCESS_HAND_NOT_VALID,
-    SUCCES_TURN_END,
-    SUCCESS_GAME_END,
+    SUCCESS_TURN_END,
+    SUCCESS_GAME_END
 };
 
 template<int N>
@@ -29,5 +29,15 @@ struct Turn {
     inline bool isFinished() { return movesLeft <= 0; }
 };
 
+enum Target : int{
+    POOL = 128,
+    PLAYER,
+    HAND,
+    BOWL,
+    ADD,
+    DEL,
+    CLR,
+    OFF
+};
     
 } // namespace Noodle

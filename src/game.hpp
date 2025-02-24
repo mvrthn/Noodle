@@ -5,6 +5,7 @@
 #include "pool.hpp"
 #include "player.hpp"
 #include "types.hpp"
+#include "buffer.hpp"
 
 
 namespace Noodle {
@@ -12,14 +13,16 @@ namespace Noodle {
 template<int N>
 class Game {
 public:
-    ReturnType drawCardFromDeck();
-    ReturnType drawCardFromPool(int);
-    ReturnType redrawPool();
-    ReturnType addCardToBowl(int, int);
-    ReturnType pourOutBowl(int);
-    ReturnType eatBowl(int);
-    ReturnType useSpoon(int, int, bool, int, int);
-    ReturnType discardCardFromHand(int);
+    Game(Buffer&);
+
+    Status drawCardFromDeck();
+    Status drawCardFromPool(int);
+    Status redrawPool();
+    Status addCardToBowl(int, int);
+    Status pourOutBowl(int);
+    Status eatBowl(int);
+    Status useSpoon(int, int, bool, int, int);
+    Status discardCardFromHand(int);
 
     const Array<Pool::Size>& getDataFromPool() const;
     const Array<Hand::MaxSize>& getDataFromHand(int) const;
@@ -30,11 +33,10 @@ private:
     Pool pool;
     Player players[N];
     Turn<N> turn = Turn<N>(players);
+    Buffer& buffer;
 
 private:
-    ReturnType endMove(bool, bool);
-    ReturnType endMove(bool);
-    ReturnType endMove();
+    Status endMove();
 };
 
 } // namespace Noodle

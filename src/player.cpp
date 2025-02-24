@@ -53,7 +53,7 @@ bool Player::useSpoon() {
 }
 
 bool Player::checkIfWon() const {
-    return eatenBowls >= 3;
+    return eatenBowls >= BowlNum;
 }
 
 const Array<Bowl::Size>& Player::getDataFromBowl(int index) const {
@@ -65,8 +65,8 @@ const Array<Hand::MaxSize>& Player::getDataFromHand() const {
     return hand.getData();
 }
 
-void Player::checkIfInBounds(int i) const {
-    assert(i >= 0 && i < 3);
+void Player::checkIfInBounds(int i) {
+    assert(i >= 0 && i < BowlNum);
 }
 
 } // namespace Noodle

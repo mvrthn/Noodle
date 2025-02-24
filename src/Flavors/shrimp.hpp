@@ -8,7 +8,7 @@ namespace Noodle {
 
 class Shrimp : Flavor {
 public:
-    Shrimp(): Flavor("Shrimp") {}
+    Shrimp(): Flavor(18, "Shrimp") {}
 
     int evaluate(const Array<5>&) const;
 };

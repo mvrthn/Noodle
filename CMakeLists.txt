@@ -16,7 +16,7 @@ FetchContent_Declare(SFML
 FetchContent_MakeAvailable(SFML)
 
 add_executable(Noodle ${SRC_PATH})
-target_link_libraries(Noodle PRIVATE sfml-graphics)
+target_link_libraries(Noodle PRIVATE sfml-graphics sfml-network)
 target_compile_features(Noodle PRIVATE cxx_std_23)
 
 if(WIN32)

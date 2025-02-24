@@ -8,9 +8,8 @@ namespace Noodle {
     
 class Chives : Ingredient {
 public:
-    Chives(): Ingredient("Chives") {}
+    Chives(): Ingredient(0, "Chives") {}
 
-    inline int id() const { return 0; }
     inline bool isVege() const { return true; }
     inline bool isProtein() const { return false; }
 };
